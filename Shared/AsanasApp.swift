@@ -6,12 +6,27 @@
 //
 
 import SwiftUI
+import CoreData
 
+class UserDataController: ObservableObject {
+    let persistentContainer: NSPersistentContainer = {
+        let user_container = NSPersistentContainer(name:"UserInfo")
+        user_container.loadPersistentStores{_,error in
+            if let error = error as NSError? {fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        }
+        return user_container
+    }()
+}
 @main
 struct AsanasApp: App {
+    @StateObject var viewRouter = ViewRouter()
+    @StateObject private var userdataController = UserDataController()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewRouter: viewRouter)
+                .environment(\.managedObjectContext, userdataController.persistentContainer.viewContext)
         }
     }
 }
