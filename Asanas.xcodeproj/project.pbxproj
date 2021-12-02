@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793E67BE2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
+		793E67BF2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
 		79AC74EA274F470200D9E83A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74E9274F470200D9E83A /* Tests_iOS.swift */; };
 		79AC74EC274F470200D9E83A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74EB274F470200D9E83A /* Tests_iOSLaunchTests.swift */; };
 		79AC74F6274F470200D9E83A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74F5274F470200D9E83A /* Tests_macOS.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		793E67BD2758748E003FC860 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		79AC74D1274F46FF00D9E83A /* AsanasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanasApp.swift; sourceTree = "<group>"; };
 		79AC74D2274F46FF00D9E83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79AC74D3274F470200D9E83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 				79AC750D274F47E900D9E83A /* RegisterScreen.swift */,
 				79F892652751A32F00825E1C /* ViewRouter.swift */,
 				79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */,
+				793E67BD2758748E003FC860 /* MainScreen.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -311,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793E67BE2758748E003FC860 /* MainScreen.swift in Sources */,
 				79AC750E274F47E900D9E83A /* RegisterScreen.swift in Sources */,
 				79F8926A2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */,
 				79AC74FB274F470200D9E83A /* ContentView.swift in Sources */,
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793E67BF2758748E003FC860 /* MainScreen.swift in Sources */,
 				79AC750F274F47E900D9E83A /* RegisterScreen.swift in Sources */,
 				79F8926B2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */,
 				79AC74FC274F470200D9E83A /* ContentView.swift in Sources */,

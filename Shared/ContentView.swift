@@ -13,7 +13,7 @@ import SwiftUI
 enum Page{
     case loginpage
     case registerpage
-    //case mainpage
+    case mainpage
 }
 //Page Declare end
 
@@ -26,6 +26,8 @@ struct ContentView: View {
             LoginPage(viewRouter: viewRouter)
         case .registerpage:
             RegisterPage(viewRouter: viewRouter)
+        case .mainpage:
+            MainPage(viewRouter: viewRouter)
         }
     }
 }
@@ -33,6 +35,9 @@ struct LoginPage: View{
     @State var viewRouter: ViewRouter
     @State var username: String = ""
     @State var password: String = ""
+    @State private var failedLogin = false
+    @State private var showAlert = false
+    @FetchRequest (sortDescriptors:[]) var users: FetchedResults<User>
     var body: some View{
     //Login Page
     VStack{
@@ -45,11 +50,30 @@ struct LoginPage: View{
             .cornerRadius(5.0)
             .padding(.bottom,20)
         HStack{
-            Button("Sign in",action:{})
-            Button("Register",action:{viewRouter.currentPage = .registerpage
+            Button("Sign in",action:{
+                self.failedLogin = false
+                for user in users {
+                    debugPrint("Name",user.username)
+                    debugPrint("Name",user.password)
+                    if(user.username==username&&password==user.password)
+                    {//Sucess login
+                        self.failedLogin = false
+                        break
+                    }
+                    else{//Fail login
+                        self.failedLogin = true
+                    }}
+                    self.showAlert = true
+            }).alert(isPresented: $showAlert) {if self.failedLogin {return Alert(title: Text("Failed to login"), message: Text("Username or password is invalid"), dismissButton: .default(Text("OK")))}
+                else {return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))}
+
+        }
+            Button("Register",action:{
+                self.showAlert = false
+                viewRouter.currentPage = .registerpage
             })
         }
-        Button("Skip",action:{})
+        Button("Skip",action:{                   self.showAlert = false})
     }
         }
     //Login Page end
