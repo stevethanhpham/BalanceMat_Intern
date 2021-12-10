@@ -54,7 +54,7 @@ struct LoginPage: View{
                 self.failedLogin = false
                 for user in users {
                     debugPrint("Name",user.username)
-                    debugPrint("Name",user.password)
+                    debugPrint("Password",user.password)
                     if(user.username==username&&password==user.password)
                     {//Sucess login
                         self.failedLogin = false
@@ -65,7 +65,9 @@ struct LoginPage: View{
                     }}
                     self.showAlert = true
             }).alert(isPresented: $showAlert) {if self.failedLogin {return Alert(title: Text("Failed to login"), message: Text("Username or password is invalid"), dismissButton: .default(Text("OK")))}
-                else {return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))}
+                else {                viewRouter.currentPage = .mainpage
+                    return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))
+                }
 
         }
             Button("Register",action:{
@@ -73,7 +75,9 @@ struct LoginPage: View{
                 viewRouter.currentPage = .registerpage
             })
         }
-        Button("Skip",action:{                   self.showAlert = false})
+        Button("Skip",action:{                   self.showAlert = false
+            viewRouter.currentPage = .mainpage
+        })
     }
         }
     //Login Page end

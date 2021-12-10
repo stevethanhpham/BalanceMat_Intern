@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44AE8A26B1EF8796C7B40FDE /* Pods_Asanas__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3EC8B5571FB4B7C4FA0772 /* Pods_Asanas__macOS_.framework */; };
+		7917514E275AF8CC0049DD79 /* ORSSerialPort in Resources */ = {isa = PBXBuildFile; fileRef = 7917514D275AF8CC0049DD79 /* ORSSerialPort */; };
 		793E67BE2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
 		793E67BF2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
+		7964B34127616CE700A7851F /* SerialConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964B34027616CE700A7851F /* SerialConnection.swift */; };
 		79AC74EA274F470200D9E83A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74E9274F470200D9E83A /* Tests_iOS.swift */; };
 		79AC74EC274F470200D9E83A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74EB274F470200D9E83A /* Tests_iOSLaunchTests.swift */; };
 		79AC74F6274F470200D9E83A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74F5274F470200D9E83A /* Tests_macOS.swift */; };
@@ -25,6 +28,7 @@
 		79F892672751A32F00825E1C /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F892652751A32F00825E1C /* ViewRouter.swift */; };
 		79F8926A2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */; };
 		79F8926B2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */; };
+		CA080D0F0828775A533523AE /* Pods_Asanas__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 675B71BC091CABD2055FC69F /* Pods_Asanas__macOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156D610F4138599F5A6DB0AD /* Pods-Asanas (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asanas (macOS).release.xcconfig"; path = "Target Support Files/Pods-Asanas (macOS)/Pods-Asanas (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		2C6E8F890AC441857BEC7ED0 /* Pods-Asanas (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asanas (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Asanas (macOS)/Pods-Asanas (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		675B71BC091CABD2055FC69F /* Pods_Asanas__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asanas__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7917514D275AF8CC0049DD79 /* ORSSerialPort */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = ORSSerialPort; path = Pods/ORSSerialPort; sourceTree = SOURCE_ROOT; };
 		793E67BD2758748E003FC860 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		7964B33B275B003A00A7851F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		7964B34027616CE700A7851F /* SerialConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConnection.swift; sourceTree = "<group>"; };
 		79AC74D1274F46FF00D9E83A /* AsanasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanasApp.swift; sourceTree = "<group>"; };
 		79AC74D2274F46FF00D9E83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79AC74D3274F470200D9E83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +71,7 @@
 		79AC750D274F47E900D9E83A /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		79F892652751A32F00825E1C /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		79F892692751D3C300825E1C /* UserInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfo.xcdatamodel; sourceTree = "<group>"; };
+		FE3EC8B5571FB4B7C4FA0772 /* Pods_Asanas__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Asanas__macOS_.framework; path = "../../Library/Developer/Xcode/DerivedData/Asanas-fjipkakhmziuixctzpucurchgewz/Build/Products/Debug/Pods_Asanas__macOS_.framework"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AE8A26B1EF8796C7B40FDE /* Pods_Asanas__macOS_.framework in Frameworks */,
+				CA080D0F0828775A533523AE /* Pods_Asanas__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0426CA5C443CD55830E033B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7917514D275AF8CC0049DD79 /* ORSSerialPort */,
+				FE3EC8B5571FB4B7C4FA0772 /* Pods_Asanas__macOS_.framework */,
+				675B71BC091CABD2055FC69F /* Pods_Asanas__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AC008F1029497924463AEA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C6E8F890AC441857BEC7ED0 /* Pods-Asanas (macOS).debug.xcconfig */,
+				156D610F4138599F5A6DB0AD /* Pods-Asanas (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		79AC74CB274F46FF00D9E83A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +135,8 @@
 				79AC74E8274F470200D9E83A /* Tests iOS */,
 				79AC74F4274F470200D9E83A /* Tests macOS */,
 				79AC74D9274F470200D9E83A /* Products */,
+				3AC008F1029497924463AEA7 /* Pods */,
+				0426CA5C443CD55830E033B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +150,8 @@
 				79F892652751A32F00825E1C /* ViewRouter.swift */,
 				79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */,
 				793E67BD2758748E003FC860 /* MainScreen.swift */,
+				7964B33B275B003A00A7851F /* Bridge-Header.h */,
+				7964B34027616CE700A7851F /* SerialConnection.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -181,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79AC7504274F470200D9E83A /* Build configuration list for PBXNativeTarget "Asanas (macOS)" */;
 			buildPhases = (
+				F14924CC9ED066497AF7063F /* [CP] Check Pods Manifest.lock */,
 				79AC74DA274F470200D9E83A /* Sources */,
 				79AC74DB274F470200D9E83A /* Frameworks */,
 				79AC74DC274F470200D9E83A /* Resources */,
+				8488BDA8A8439985B6488CC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7917514E275AF8CC0049DD79 /* ORSSerialPort in Resources */,
 				79AC74FE274F470200D9E83A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +348,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8488BDA8A8439985B6488CC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Asanas (macOS)/Pods-Asanas (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Asanas (macOS)/Pods-Asanas (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Asanas (macOS)/Pods-Asanas (macOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F14924CC9ED066497AF7063F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Asanas (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79AC74D4274F470200D9E83A /* Sources */ = {
@@ -333,6 +414,7 @@
 				79F8926B2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */,
 				79AC74FC274F470200D9E83A /* ContentView.swift in Sources */,
 				79AC74FA274F470200D9E83A /* AsanasApp.swift in Sources */,
+				7964B34127616CE700A7851F /* SerialConnection.swift in Sources */,
 				79F892672751A32F00825E1C /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,13 +625,16 @@
 		};
 		79AC7505274F470200D9E83A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C6E8F890AC441857BEC7ED0 /* Pods-Asanas (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -563,19 +648,23 @@
 				PRODUCT_NAME = Asanas;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Shared/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		79AC7506274F470200D9E83A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 156D610F4138599F5A6DB0AD /* Pods-Asanas (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -589,6 +678,7 @@
 				PRODUCT_NAME = Asanas;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Shared/Bridge-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

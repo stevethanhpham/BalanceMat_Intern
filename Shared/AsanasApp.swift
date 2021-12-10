@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 class UserDataController: ObservableObject {
     let persistentContainer: NSPersistentContainer = {
         let user_container = NSPersistentContainer(name:"UserInfo")
@@ -22,7 +23,7 @@ class UserDataController: ObservableObject {
 struct AsanasApp: App {
     @StateObject var viewRouter = ViewRouter()
     @StateObject private var userdataController = UserDataController()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView(viewRouter: viewRouter)
