@@ -13,20 +13,16 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
     }
     
     func serialPortWasRemovedFromSystem(_ serialPort: ORSSerialPort) {
+        debugPrint("Portname: ","removed")
         self.serialPort = nil
     }
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
         print("Serial port \(serialPort) encountered an error: \(error)")
     }
     
-    func serialPortWasOpened(_ serialPort: ORSSerialPort) {
-        let descriptor = ORSSerialPacketDescriptor(prefixString: "!pos", suffixString: ";", maximumPacketLength: 8, userInfo: nil)
-        serialPort.startListeningForPackets(matching: descriptor)
-    }
-    
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
-        let string = String(data: data, encoding: .utf8)
-        print("Got \(string) from the serial port!")
+        let str = String(data: data, encoding: String.Encoding.utf32BigEndian)
+        debugPrint(str)
     }
     // MARK: - Properties
     
@@ -35,17 +31,19 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
     @objc dynamic var serialPort: ORSSerialPort? {
         willSet {
             if let port = serialPort {
+                debugPrint("Portname: ","removed")
                 port.close()
                 port.delegate = nil
             }
         }
         didSet {
             if let port = serialPort {
-                port.baudRate = 115200
-                port.rts = true
+                port.baudRate = 57600 
+                debugPrint("Portname: ","open")
                 port.delegate = self
                 port.open()
             }
         }
     }
+
 }

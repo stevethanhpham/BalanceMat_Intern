@@ -24,6 +24,7 @@
 		79AC74FE274F470200D9E83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79AC74D3274F470200D9E83A /* Assets.xcassets */; };
 		79AC750E274F47E900D9E83A /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC750D274F47E900D9E83A /* RegisterScreen.swift */; };
 		79AC750F274F47E900D9E83A /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC750D274F47E900D9E83A /* RegisterScreen.swift */; };
+		79E92CB627681EC600DC7BAE /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E92CB527681EC600DC7BAE /* Comm.swift */; };
 		79F892662751A32F00825E1C /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F892652751A32F00825E1C /* ViewRouter.swift */; };
 		79F892672751A32F00825E1C /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F892652751A32F00825E1C /* ViewRouter.swift */; };
 		79F8926A2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */; };
@@ -69,6 +70,7 @@
 		79AC74F5274F470200D9E83A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		79AC74F7274F470200D9E83A /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		79AC750D274F47E900D9E83A /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		79E92CB527681EC600DC7BAE /* Comm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
 		79F892652751A32F00825E1C /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		79F892692751D3C300825E1C /* UserInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserInfo.xcdatamodel; sourceTree = "<group>"; };
 		FE3EC8B5571FB4B7C4FA0772 /* Pods_Asanas__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Asanas__macOS_.framework; path = "../../Library/Developer/Xcode/DerivedData/Asanas-fjipkakhmziuixctzpucurchgewz/Build/Products/Debug/Pods_Asanas__macOS_.framework"; sourceTree = SOURCE_ROOT; };
@@ -152,6 +154,7 @@
 				793E67BD2758748E003FC860 /* MainScreen.swift */,
 				7964B33B275B003A00A7851F /* Bridge-Header.h */,
 				7964B34027616CE700A7851F /* SerialConnection.swift */,
+				79E92CB527681EC600DC7BAE /* Comm.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				793E67BF2758748E003FC860 /* MainScreen.swift in Sources */,
+				79E92CB627681EC600DC7BAE /* Comm.swift in Sources */,
 				79AC750F274F47E900D9E83A /* RegisterScreen.swift in Sources */,
 				79F8926B2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */,
 				79AC74FC274F470200D9E83A /* ContentView.swift in Sources */,
