@@ -18,7 +18,7 @@ extension Data {
         return self.map { String(format: format, $0) }.joined()
     }
 }
-class Serial_Comm: NSObject, ORSSerialPortDelegate{
+class Serial_Comm: NSObject, ObservableObject, ORSSerialPortDelegate{
     static var PKT_START:UInt8=0x24
     static var BROADCAST:UInt8=0xc8
     static var BROADCAST_ACK:UInt8=0xc9
@@ -30,6 +30,7 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
     static var SEN_STATUS_LEN: UInt8=6
     var bufIndex:UInt8=0
     var messageBuf:[UInt8] = []
+    @Published var mesurement:[Double]=[]
     deinit {
         self.serialPort = nil
     }
@@ -53,7 +54,9 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
     }
     func serialPortWasRemovedFromSystem(_ serialPort: ORSSerialPort) {
         debugPrint("Portname: ","removed")
+        self.clearMessage()
         self.serialPort = nil
+        self.mesurement=[]
     }
     func serialPort(_ serialPort: ORSSerialPort, didEncounterError error: Error) {
         print("Serial port \(serialPort) encountered an error: \(error)")
@@ -81,14 +84,14 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
         let list_dec=list_hex_str.flatMap { UInt8($0, radix: 16) }
         messageBuf.append(contentsOf: list_dec)
         bufIndex = bufIndex + UInt8(list_dec.count)
-        var start_idx = messageBuf.firstIndex(of: 36)
+        let start_idx = messageBuf.firstIndex(of: 36)
         if(start_idx != nil && start_idx!+5<messageBuf.count){
             let info_idx = start_idx!+5
             let str_info = messageBuf[info_idx]
             //debugPrint("Info",str_info)
             if(str_info==201){
             
-            }else if (str_info==43){
+            }else if (str_info==43 && messageBuf.count>6){
                 let payload:UInt8? = messageBuf[start_idx!+6]
                 let packetSize:UInt8? = payload! + UInt8(Serial_Comm.HEADER_LEN)
                 //debugPrint("mbuff",messageBuf.count)
@@ -108,13 +111,23 @@ class Serial_Comm: NSObject, ORSSerialPortDelegate{
                     var samIndx=0
                     var samples:[UInt8]=[]
                     for value in stride(from: UInt8(start_idx!)+Serial_Comm.HEADER_LEN+Serial_Comm.SEN_STATUS_LEN, to: UInt8(start_idx!)+Serial_Comm.HEADER_LEN+Serial_Comm.SEN_STATUS_LEN+(numSamples*2), by: 2){
-                        var lw = 0x00FF & messageBuf[Int(value)]
-                        var hw = 0x00FF & messageBuf[Int(value+1)]
-                        var val = lw+(hw<<8)
+                        let lw = 0x00FF & messageBuf[Int(value)]
+                        let hw = 0x00FF & messageBuf[Int(value+1)]
+                        let val = lw+(hw<<8)
                         samples.insert(val, at: samIndx)
                         samIndx+=1
                     }
-                    debugPrint(samples)
+                    if(samples.count>0){
+                        var avg=0.0
+                        for value in samples{
+                            avg+=Double(value)
+                        }
+                        avg=avg/Double(samples.count)
+                        self.mesurement.append(avg)
+                    //debugPrint(samples)
+                    //debugPrint(mesurement)
+                        
+                    }
                     clearMessage()
                 }
                 

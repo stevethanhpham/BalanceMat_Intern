@@ -23,10 +23,10 @@ class UserDataController: ObservableObject {
 struct AsanasApp: App {
     @StateObject var viewRouter = ViewRouter()
     @StateObject private var userdataController = UserDataController()
-    
+    @StateObject var serial = Serial_Comm()
     var body: some Scene {
         WindowGroup {
-            ContentView(viewRouter: viewRouter)
+            ContentView(viewRouter: viewRouter, serial: serial)
                 .environment(\.managedObjectContext, userdataController.persistentContainer.viewContext)
         }
     }

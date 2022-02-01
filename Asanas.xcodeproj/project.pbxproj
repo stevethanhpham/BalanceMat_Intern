@@ -12,6 +12,7 @@
 		793E67BE2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
 		793E67BF2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
 		7964B34127616CE700A7851F /* SerialConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964B34027616CE700A7851F /* SerialConnection.swift */; };
+		798EE70427A8B0B300568F0B /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EE70327A8B0B300568F0B /* SelectionScreen.swift */; };
 		79AC74EA274F470200D9E83A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74E9274F470200D9E83A /* Tests_iOS.swift */; };
 		79AC74EC274F470200D9E83A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74EB274F470200D9E83A /* Tests_iOSLaunchTests.swift */; };
 		79AC74F6274F470200D9E83A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74F5274F470200D9E83A /* Tests_macOS.swift */; };
@@ -57,6 +58,7 @@
 		793E67BD2758748E003FC860 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7964B33B275B003A00A7851F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		7964B34027616CE700A7851F /* SerialConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConnection.swift; sourceTree = "<group>"; };
+		798EE70327A8B0B300568F0B /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
 		79AC74D1274F46FF00D9E83A /* AsanasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanasApp.swift; sourceTree = "<group>"; };
 		79AC74D2274F46FF00D9E83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79AC74D3274F470200D9E83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				7964B33B275B003A00A7851F /* Bridge-Header.h */,
 				7964B34027616CE700A7851F /* SerialConnection.swift */,
 				79E92CB527681EC600DC7BAE /* Comm.swift */,
+				798EE70327A8B0B300568F0B /* SelectionScreen.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				793E67BF2758748E003FC860 /* MainScreen.swift in Sources */,
 				79E92CB627681EC600DC7BAE /* Comm.swift in Sources */,
+				798EE70427A8B0B300568F0B /* SelectionScreen.swift in Sources */,
 				79AC750F274F47E900D9E83A /* RegisterScreen.swift in Sources */,
 				79F8926B2751D3C300825E1C /* UserInfo.xcdatamodeld in Sources */,
 				79AC74FC274F470200D9E83A /* ContentView.swift in Sources */,

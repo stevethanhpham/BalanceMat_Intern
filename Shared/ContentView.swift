@@ -14,20 +14,24 @@ enum Page{
     case loginpage
     case registerpage
     case mainpage
+    case selectionpage
 }
 //Page Declare end
 
 //Defined class end
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
+    @StateObject var serial: Serial_Comm
     var body: some View{
         switch viewRouter.currentPage {
         case .loginpage:
             LoginPage(viewRouter: viewRouter)
         case .registerpage:
             RegisterPage(viewRouter: viewRouter)
+        case .selectionpage:
+            SelectionPage(viewRouter: viewRouter)
         case .mainpage:
-            MainPage(viewRouter: viewRouter)
+            MainPage(viewRouter: viewRouter, serial: serial)
         }
     }
 }
@@ -76,7 +80,8 @@ struct LoginPage: View{
             })
         }
         Button("Skip",action:{                   self.showAlert = false
-            viewRouter.currentPage = .mainpage
+            viewRouter.currentPage  = .selectionpage
+            //viewRouter.currentPage = .mainpage
         })
     }
         }
@@ -84,7 +89,7 @@ struct LoginPage: View{
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewRouter: ViewRouter())
+        ContentView(viewRouter: ViewRouter(), serial: Serial_Comm())
     }
 }
 
