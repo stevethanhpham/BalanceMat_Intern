@@ -22,9 +22,12 @@ struct SelectionPage: View{
     @State var selectedIndex=0
     @State var viewRouter: ViewRouter
     var body: some View{
-        Text("Selection")
+        VStack{
+        Image("asenesa_logo")
+            .resizable()
+            .scaledToFit()
         ScrollView(.horizontal){
-            LazyHStack{
+            LazyHStack(spacing:60 ){
                 ForEach(0..<standsymbolArray.count){item in
                     standView(name: self.standnameArray[item],isSelected: item==self.selectedIndex ? true:false, symbol: self.standsymbolArray[item]).onTapGesture {
                         debugPrint(standnameArray[item])
@@ -39,10 +42,13 @@ struct SelectionPage: View{
             viewRouter.currentPage = .mainpage})
         Button("Cancel",action:{
             viewRouter.currentPage = .loginpage})}
+        }.background(Color.white)
+            .foregroundColor(.black)
+            .frame(width: 960, height: 480, alignment: .center)
     }
-    struct Selection_Previews: PreviewProvider {
-        static var previews: some View {
-            SelectionPage(viewRouter :ViewRouter())
-        }
+}
+struct Selection_Previews: PreviewProvider {
+    static var previews: some View {
+        SelectionPage(viewRouter :ViewRouter())
     }
 }

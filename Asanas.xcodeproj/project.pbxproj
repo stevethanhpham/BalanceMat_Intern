@@ -13,6 +13,7 @@
 		793E67BF2758748E003FC860 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793E67BD2758748E003FC860 /* MainScreen.swift */; };
 		7964B34127616CE700A7851F /* SerialConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964B34027616CE700A7851F /* SerialConnection.swift */; };
 		798EE70427A8B0B300568F0B /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798EE70327A8B0B300568F0B /* SelectionScreen.swift */; };
+		798EE70627B1F5F500568F0B /* asenesa_logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 798EE70527B1F5F500568F0B /* asenesa_logo.svg */; };
 		79AC74EA274F470200D9E83A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74E9274F470200D9E83A /* Tests_iOS.swift */; };
 		79AC74EC274F470200D9E83A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74EB274F470200D9E83A /* Tests_iOSLaunchTests.swift */; };
 		79AC74F6274F470200D9E83A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC74F5274F470200D9E83A /* Tests_macOS.swift */; };
@@ -59,6 +60,7 @@
 		7964B33B275B003A00A7851F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		7964B34027616CE700A7851F /* SerialConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialConnection.swift; sourceTree = "<group>"; };
 		798EE70327A8B0B300568F0B /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
+		798EE70527B1F5F500568F0B /* asenesa_logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = asenesa_logo.svg; sourceTree = "<group>"; };
 		79AC74D1274F46FF00D9E83A /* AsanasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsanasApp.swift; sourceTree = "<group>"; };
 		79AC74D2274F46FF00D9E83A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		79AC74D3274F470200D9E83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				79AC74D1274F46FF00D9E83A /* AsanasApp.swift */,
 				79AC74D2274F46FF00D9E83A /* ContentView.swift */,
 				79AC74D3274F470200D9E83A /* Assets.xcassets */,
+				798EE70527B1F5F500568F0B /* asenesa_logo.svg */,
 				79AC750D274F47E900D9E83A /* RegisterScreen.swift */,
 				79F892652751A32F00825E1C /* ViewRouter.swift */,
 				79F892682751D3C300825E1C /* UserInfo.xcdatamodeld */,
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7917514E275AF8CC0049DD79 /* ORSSerialPort in Resources */,
+				798EE70627B1F5F500568F0B /* asenesa_logo.svg in Resources */,
 				79AC74FE274F470200D9E83A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

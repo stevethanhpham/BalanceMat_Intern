@@ -11,6 +11,7 @@ import ORSSerial
 class Measument: ObservableObject{
     @Published var measurement=[]
 }
+
 struct LineShape: Shape {
     @Binding var measurement:[Double]
 
@@ -37,20 +38,40 @@ struct LineShape: Shape {
 //    @Binding var measurement:[Int]
 //}
 struct MainPage: View{
+    func startTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
+            if (self.Testing){
+                self.TimeRemaing -= 1
+            }
+            if (self.TimeRemaing==0){
+                self.Testing=false
+                self.serial.addData=false
+            }
+            }
+    }
     @State var viewRouter: ViewRouter
     @State var output : String = ""
+    @State var Testing: Bool = false
+    @State var TimeRemaing: Int = 30
+    @State var timer: Timer? = nil
+    var time_select: [Int] = [30,60,90]
     let serialPortManager = ORSSerialPortManager.shared()
     @ObservedObject var serial:Serial_Comm
+    var record:[Double] = []
     var body: some View {
         VStack{
-            Text("Main Page")
+            Text("Asenesa")
             ZStack {
                             Rectangle()
                                 .stroke(Color.gray, lineWidth: 3.0)
-                                .frame(width: 300, height: 300, alignment: .center)
+                                .frame(width: 960, height: 400, alignment: .center)
             LineShape(measurement : $serial.mesurement)
                                 .stroke(Color.red, lineWidth: 2.0)
-                .frame(width: 300, height: 300, alignment: .center)}
+                .frame(width: 960, height: 350, alignment: .top)}
+            Picker("Time Select", selection: $TimeRemaing){ForEach(time_select, id: \.self){Text(String($0))}}
+            .colorInvert()
+            .colorMultiply(Color.blue)
+            HStack{
             Button("Connect to Mat",action:{
                 let ports = ORSSerialPortManager.shared().availablePorts
                 debugPrint(ports.debugDescription)
@@ -78,9 +99,21 @@ struct MainPage: View{
                 catch {
                 }
             })
+            Button("Start Test",action:{
+                serial.addData=true
+                self.Testing = true
+                serial.mesurement=[]
+                self.startTimer()
+            })
+             Text("\(TimeRemaing)")
             }
         }
+        .background(Color.white)
+        .frame(width: 960, height: 480, alignment: .center)
+            .foregroundColor(.black)
     }
+}
+
 struct Main_Previews: PreviewProvider {
     static var previews: some View {
         MainPage(viewRouter :ViewRouter(), serial: Serial_Comm())

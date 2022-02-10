@@ -76,12 +76,17 @@ struct RegisterPage: View{
         Text("Password");
                 SecureField("Password", text:$passwordreg)
         Text("ConfirmPassword");
-                SecureField("ConfirmPassword", text:$confirmpasswordreg)
+                SecureField("Confirm Password", text:$confirmpasswordreg)
             
         Text("DOB");
-            DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date){Text("Select a date")}
+                DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date){Text("Select a date").foregroundColor(.black)}
+                .colorInvert()
+                .colorMultiply(Color.blue)
         Text("Gender");
-                Picker("", selection: $genderreg){ForEach(gender_list, id: \.self){Text($0)}}}
+                Picker("", selection: $genderreg){ForEach(gender_list, id: \.self){Text($0)}}
+                .colorInvert()
+                .colorMultiply(Color.blue)
+            }
         //field end
         HStack{
                 Button("Confirm",action:{
@@ -138,8 +143,10 @@ struct RegisterPage: View{
                 return Alert(title: Text("Message"), message: Text(mess), dismissButton: .default(Text("OK")))}
         }
         }
-        }
-        }
+        }.frame(width: 960, height: 480)
+        .background(Color.white)
+            .foregroundColor(.black)
+    }
     //Register Page end
 }
 struct Register_Previews: PreviewProvider {

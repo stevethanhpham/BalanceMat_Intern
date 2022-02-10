@@ -30,6 +30,7 @@ class Serial_Comm: NSObject, ObservableObject, ORSSerialPortDelegate{
     static var SEN_STATUS_LEN: UInt8=6
     var bufIndex:UInt8=0
     var messageBuf:[UInt8] = []
+    var addData: Bool = true
     @Published var mesurement:[Double]=[]
     deinit {
         self.serialPort = nil
@@ -123,7 +124,8 @@ class Serial_Comm: NSObject, ObservableObject, ORSSerialPortDelegate{
                             avg+=Double(value)
                         }
                         avg=avg/Double(samples.count)
-                        self.mesurement.append(avg)
+                        if (self.addData){
+                            self.mesurement.append(avg)}
                     //debugPrint(samples)
                     //debugPrint(mesurement)
                         

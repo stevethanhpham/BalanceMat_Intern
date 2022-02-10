@@ -45,22 +45,27 @@ struct LoginPage: View{
     var body: some View{
     //Login Page
     VStack{
+        Image("asenesa_logo")
+            .resizable()
+            .scaledToFit()
         Text("Username");
-        TextField("Username", text:$username).padding()
-            .background()
+        TextField("Username", text:$username)
+            .padding()
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
         Text("Password");
-        TextField("Password", text:$password).padding()
-            .background()
-            .cornerRadius(5.0)
-            .padding(.bottom,20)
+        TextField("Password", text:$password)
+            .padding()
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
         HStack{
             Button("Sign in",action:{
-                self.failedLogin = false
+                self.failedLogin = true
                 for user in users {
-                    debugPrint("Name",user.username)
-                    debugPrint("Password",user.password)
+                    debugPrint("name",user.username)
+                    debugPrint("password",user.password)
                     if(user.username==username&&password==user.password)
-                    {//Sucess login
+                    {//Success login
                         self.failedLogin = false
                         break
                     }
@@ -69,7 +74,7 @@ struct LoginPage: View{
                     }}
                     self.showAlert = true
             }).alert(isPresented: $showAlert) {if self.failedLogin {return Alert(title: Text("Failed to login"), message: Text("Username or password is invalid"), dismissButton: .default(Text("OK")))}
-                else {                viewRouter.currentPage = .mainpage
+                else {                viewRouter.currentPage = .selectionpage
                     return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))
                 }
 
@@ -83,7 +88,9 @@ struct LoginPage: View{
             viewRouter.currentPage  = .selectionpage
             //viewRouter.currentPage = .mainpage
         })
-    }
+    }.frame(width: 960, height: 480, alignment: .center)
+    .background(Color.white)
+            .foregroundColor(.black)
         }
     //Login Page end
 }
