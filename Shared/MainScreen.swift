@@ -70,7 +70,7 @@ struct MainPage: View{
                 .frame(width: 960, height: 350, alignment: .top)}
             Picker("Time Select", selection: $TimeRemaing){ForEach(time_select, id: \.self){Text(String($0))}}
             .colorInvert()
-            .colorMultiply(Color.blue)
+            .colorMultiply(Color.cyan)
             HStack{
             Button("Connect to Mat",action:{
                 let ports = ORSSerialPortManager.shared().availablePorts
@@ -103,6 +103,7 @@ struct MainPage: View{
                 serial.addData=true
                 self.Testing = true
                 serial.mesurement=[]
+                serial.addData=true
                 self.startTimer()
             })
              Text("\(TimeRemaing)")
