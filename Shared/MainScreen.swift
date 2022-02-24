@@ -38,15 +38,34 @@ struct LineShape: Shape {
 //    @Binding var measurement:[Int]
 //}
 struct MainPage: View{
+    func exportCSV(from user_info: Dictionary<String, AnyObject>){
+        var csv_data = "\("First Name"),\("Last Name"),\("DOB"),\("Stand"),\("Measurement")\n"
+        csv_data=csv_data.appending("\(String(describing: user_info["First_Name"]!)),\(String(describing: user_info["Last_Name"]!)),\(String(describing: user_info["Dob"]!)),\(String(describing: user_info["Stand"]!)),\(String(describing: user_info["Measurement"]!))")
+        let fileManager = FileManager.default
+        do {
+            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            let fileURL = path.appendingPathComponent("CSV_Output.csv")
+            try csv_data.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("error creating file")
+        }
+    }
     func startTimer(){
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
             if (self.Testing){
                 self.TimeRemaing -= 1
             }
             if (self.TimeRemaing==0){
+                var user_info = Dictionary<String, AnyObject>()
+                user_info.updateValue(viewRouter.user_first_name as AnyObject, forKey: "First_Name")
+                user_info.updateValue(viewRouter.user_last_name as AnyObject, forKey: "Last_Name")
+                user_info.updateValue(viewRouter.user_dob as AnyObject, forKey: "Dob")
+                user_info.updateValue(viewRouter.stand_selection as AnyObject, forKey: "Stand")
+                user_info.updateValue(serial.mesurement as AnyObject, forKey: "Measurement")
+                exportCSV(from: user_info)
                 self.Testing=false
                 self.serial.addData=false
-                
+                self.TimeRemaing -= 1
             }
             }
     }

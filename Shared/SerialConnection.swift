@@ -18,6 +18,7 @@ extension Data {
         return self.map { String(format: format, $0) }.joined()
     }
 }
+
 class Serial_Comm: NSObject, ObservableObject, ORSSerialPortDelegate{
     static var PKT_START:UInt8=0x24
     static var BROADCAST:UInt8=0xc8
