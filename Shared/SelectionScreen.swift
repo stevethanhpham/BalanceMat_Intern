@@ -39,6 +39,7 @@ struct SelectionPage: View{
         }
         HStack{
         Button("Confirm",action:{
+            viewRouter.stand_selection=standnameArray[selectedIndex]
             viewRouter.currentPage = .mainpage})
         Button("Cancel",action:{
             viewRouter.currentPage = .loginpage})}

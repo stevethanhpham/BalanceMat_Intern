@@ -22,10 +22,11 @@ enum Page{
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
     @StateObject var serial: Serial_Comm
+
     var body: some View{
         switch viewRouter.currentPage {
         case .loginpage:
-            LoginPage(viewRouter: viewRouter)
+            LoginPage(viewRouter: viewRouter )
         case .registerpage:
             RegisterPage(viewRouter: viewRouter)
         case .selectionpage:
@@ -67,6 +68,9 @@ struct LoginPage: View{
                     if(user.username==username&&password==user.password)
                     {//Success login
                         self.failedLogin = false
+                        viewRouter.user_first_name=user.firstname ?? "Default First Name"
+                        viewRouter.user_last_name=user.lastname ?? "Default Last Name"
+                        viewRouter.user_dob=user.dob ?? Date.init()
                         break
                     }
                     else{//Fail login
@@ -74,7 +78,8 @@ struct LoginPage: View{
                     }}
                     self.showAlert = true
             }).alert(isPresented: $showAlert) {if self.failedLogin {return Alert(title: Text("Failed to login"), message: Text("Username or password is invalid"), dismissButton: .default(Text("OK")))}
-                else {                viewRouter.currentPage = .selectionpage
+                else {
+                    viewRouter.currentPage = .selectionpage
                     return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))
                 }
 
@@ -86,7 +91,6 @@ struct LoginPage: View{
         }
         Button("Skip",action:{                   self.showAlert = false
             viewRouter.currentPage  = .selectionpage
-            //viewRouter.currentPage = .mainpage
         })
     }.frame(width: 960, height: 480, alignment: .center)
     .background(Color.white)

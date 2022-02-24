@@ -46,6 +46,7 @@ struct MainPage: View{
             if (self.TimeRemaing==0){
                 self.Testing=false
                 self.serial.addData=false
+                
             }
             }
     }
