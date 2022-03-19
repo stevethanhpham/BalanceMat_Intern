@@ -6,7 +6,7 @@
 //  Retrieve from blckbirds.com/post/how-to-navigate-between-views-in-swiftui-by-using-an-observableobject/
 
 import SwiftUI
-
+// Main class to switch page from the app and carry user info
 class ViewRouter: ObservableObject{
     @Published var currentPage: Page = .loginpage
     @Published var user_first_name: String = "Default_First_Name"

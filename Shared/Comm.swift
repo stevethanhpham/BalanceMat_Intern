@@ -7,6 +7,7 @@
 
 import Darwin
 import SwiftUI
+// Setup of Research mat. Use this when you want to connect to research mat. Need for adaption to research mat
 public class Comms
 {
     enum TState { case eLookStart

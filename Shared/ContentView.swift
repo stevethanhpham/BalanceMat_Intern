@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-//Button Handler
-//Button Handler end
+
 //Page Declare
 enum Page{
     case loginpage
@@ -19,6 +18,7 @@ enum Page{
 //Page Declare end
 
 //Defined class end
+//declare list of view and information passing
 struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
     @StateObject var serial: Serial_Comm
@@ -36,6 +36,7 @@ struct ContentView: View {
         }
     }
 }
+
 struct LoginPage: View{
     @State var viewRouter: ViewRouter
     @State var username: String = ""
@@ -49,17 +50,20 @@ struct LoginPage: View{
         Image("asenesa_logo")
             .resizable()
             .scaledToFit()
+        //field for username
         Text("Username");
         TextField("Username", text:$username)
             .padding()
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+        //field for password
         Text("Password");
         TextField("Password", text:$password)
             .padding()
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
         HStack{
+            //Sign in button
             Button("Sign in",action:{
                 self.failedLogin = true
                 for user in users {
@@ -77,18 +81,19 @@ struct LoginPage: View{
                         self.failedLogin = true
                     }}
                     self.showAlert = true
+                //error message
             }).alert(isPresented: $showAlert) {if self.failedLogin {return Alert(title: Text("Failed to login"), message: Text("Username or password is invalid"), dismissButton: .default(Text("OK")))}
                 else {
                     viewRouter.currentPage = .selectionpage
                     return Alert(title: Text("Successful login"), message: Text("Login"), dismissButton: .default(Text("OK")))
                 }
 
-        }
+        }//go to register
             Button("Register",action:{
                 self.showAlert = false
                 viewRouter.currentPage = .registerpage
             })
-        }
+        }//go to selection
         Button("Skip",action:{                   self.showAlert = false
             viewRouter.currentPage  = .selectionpage
         })

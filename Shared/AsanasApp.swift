@@ -19,6 +19,7 @@ class UserDataController: ObservableObject {
         return user_container
     }()
 }
+
 @main
 struct AsanasApp: App {
     @StateObject var viewRouter = ViewRouter()
